@@ -45,7 +45,12 @@ class User extends Authenticatable
 
 
 
-    public function address(){
-        return $this->hasOne(Address::class, 'id', 'address_id');
+    // public function address(){
+    //     return $this->hasOne(Address::class, 'id', 'address_id');
+    // }
+
+    // relacionamento com endereço
+    public function addresses(){
+        return $this->hasMany(Address::class);
     }
 }

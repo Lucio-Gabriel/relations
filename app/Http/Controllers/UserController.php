@@ -16,8 +16,8 @@ class UserController extends Controller
 
     public function findOne(Request $r){
         $user = User::find($r->id);
-        $user['address'] = $user->address;
-        $user['invoice'] = $user->invoice;
+         $user['addresses'] = $user->addresses;
+        // $user['invoice'] = $user->invoice
         return $user;
     }
 

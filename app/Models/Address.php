@@ -13,5 +13,15 @@ class Address extends Model
         'address',
     ];
 
+    // não exibindo o id do usuario
+    protected $hidden  = [
+        'user_id',
+    ];
+
     use HasFactory;
+
+    // criando o relacionamento
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
