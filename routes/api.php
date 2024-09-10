@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\UserController;
-
+use App\Models\Invoice;
 use Illuminate\Support\Facades\Route;
 
 // u m usuario, inicialmente, tem um endereço
@@ -21,3 +22,9 @@ Route::get('/addresses/{id}', [AddressController::class, 'findOne']);
 
 // Incluir um novo endereço
 Route::post('/addresses',[AddressController::class, 'insert']);
+
+Route::get('/invoice', [InvoiceController::class, 'index']);
+
+Route::get('/invoice/{id}', [InvoiceController::class, 'findOne']);
+
+Route::post('/invoice', [InvoiceController::class, 'createInvoice']);
